@@ -1,0 +1,27 @@
+/Library/
+/Temp/
+/Logs/
+/obj/
+/Build/
+/Builds/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# Visual Studio
+.vs/
+
+# Mac
+.DS_Store
+
+# Crash reportes
+sysinfo.txt
+
+# Archivos de rider (si usas JetBrains)
+.idea/
