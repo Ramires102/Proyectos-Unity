@@ -1,9 +1,9 @@
-/Library/
-/Temp/
-/Logs/
-/obj/
-/Build/
-/Builds/
+Prueba_cole/Library/
+Prueba_cole/Temp/
+Prueba_cole/Logs/
+Prueba_cole/obj/
+Prueba_cole/Build/
+Prueba_cole/Builds/
 *.csproj
 *.unityproj
 *.sln
@@ -13,15 +13,7 @@
 *.userprefs
 *.pidb
 *.booproj
-
-# Visual Studio
 .vs/
-
-# Mac
 .DS_Store
-
-# Crash reportes
 sysinfo.txt
-
-# Archivos de rider (si usas JetBrains)
 .idea/
