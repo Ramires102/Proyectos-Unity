@@ -5,9 +5,10 @@ public class PlayerSobol : MonoBehaviour
     public float velocidad;
     private int indiceActual = 0;
     private bool yendoAdelante = true;
-    [Header("Controles")]
-    [SerializeField] private KeyCode teclacorrer;
-    [SerializeField] private KeyCode teclaAtras;
+    
+
+    public bool llegoBase = false;
+    public bool PoderMoverse = true;
 
     void Start()
     {
@@ -17,8 +18,9 @@ public class PlayerSobol : MonoBehaviour
     void Update()
     {
         if (manager.EnJuego == false) return;
+        if (!PoderMoverse) return;
 
-        if (Input.GetKey(teclacorrer))
+        if (Input.GetKey(manager.teclacorrer))
         {
             yendoAdelante = true;
             if (indiceActual < manager.bases.Count - 1)
@@ -35,7 +37,7 @@ public class PlayerSobol : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(teclaAtras))
+        if (Input.GetKey(manager.teclaAtras))
         {
             yendoAdelante = false;
             int baseAtras = yendoAdelante ? indiceActual : indiceActual;
@@ -53,7 +55,7 @@ public class PlayerSobol : MonoBehaviour
 
         if (transform.position == manager.bases[4].transform.position)
         {
-            manager.puntos++;
+            llegoBase = true;
         }
     }
 }

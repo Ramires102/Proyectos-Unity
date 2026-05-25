@@ -128,7 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b0f49f2e618c04c94e66842210aab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  anim_bate: {fileID: 5825514569421747170}
+  fuerzaGolpe: 1
+  direccionGolpe: {x: 0, y: 1, z: 1}
+  teclaBatear: 32
 --- !u!95 &5825514569421747170
 Animator:
   serializedVersion: 7
@@ -283,3 +285,5 @@ MonoBehaviour:
   velocidad: 0
   teclacorrer: 119
   teclaAtras: 115
+  llegoBase: 0
+  PoderMoverse: 1

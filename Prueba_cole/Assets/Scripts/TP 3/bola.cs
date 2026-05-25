@@ -4,6 +4,7 @@ using UnityEngine;
 public class bola : MonoBehaviour
 {
     public sobolManager manager;
+    public Bate_sobol bate;
 
     public Rigidbody rb;
     public float velocidadBola = 0.5f;
@@ -13,21 +14,24 @@ public class bola : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = false;
         manager = FindAnyObjectByType<sobolManager>();
+        bate = FindAnyObjectByType<Bate_sobol>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (manager.BolaLanzada == true)
+        if (manager.BolaLanzada == true && bate.puedeBatear == false)
         {
             rb.AddForce(Vector3.forward * -velocidadBola);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject == manager.lineaStrike)
+        if (collision.gameObject == manager.lineaStrike)
         {
             manager.cant_strike++;
             manager.Strike = true;
